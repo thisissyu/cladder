@@ -1,0 +1,39 @@
+[project]
+name = "causal-benchmark"
+version = "0.1"
+description = "A Benchmark to evaluate causal reasoning abilities of LLMs"
+readme = "README.md"
+requires-python = ">=3.9,<3.10"
+
+dependencies = [
+    "omnibelt==0.7.6",
+    "omnifig==1.0.1",
+    "omniply==0.1.1",
+
+    "pomegranate==0.14.8",
+
+    "numpy>=1.20,<2",
+
+    "pandas",
+    "matplotlib",
+    "tqdm",
+    "tabulate",
+]
+
+[dependency-groups]
+dev = [
+    "pytest",
+]
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["causalbenchmark*"]
+
+[tool.uv]
+build-constraint-dependencies = [
+    "Cython<3",
+    "numpy<2",
+]
