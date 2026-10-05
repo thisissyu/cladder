@@ -1,0 +1,38 @@
+{
+  "question_id": 1,
+  "prompt": "Imagine a self-contained, hypothetical world with only the following conditions, and without any unmentioned factors or causal relationships: Age has a direct effect on hospital costs and recovery. Hospital costs has a direct effect on recovery.\n\nFor patients who are young and pay a low hospital bill, the probability of recovery is 3%. For patients who are young and pay a high hospital bill, the probability of recovery is 15%. For patients who are old and pay a low hospital bill, the probability of recovery is 93%. For patients who are old and pay a high hospital bill, the probability of recovery is 7%. The overall probability of old age is 13%.\n\nWill high hospital bill increase the chance of recovery?\n\nReason step by step about the causal effect. Your final answer must start with Yes or No.",
+  "raw_output": "Yes",
+  "predicted": "yes",
+  "answer": "no",
+  "correct": false,
+  "meta": {
+    "story_id": "simpson_hospital",
+    "graph_id": "confounding",
+    "treated": true,
+    "result": true,
+    "polarity": true,
+    "groundtruth": -0.006379550539189899,
+    "query_type": "ate",
+    "rung": 2,
+    "formal_form": "E[Y | do(X = 1)] - E[Y | do(X = 0)]",
+    "given_info": {
+      "p(Y | V1, X)": [
+        [
+          0.02868900837194475,
+          0.14792608457745604
+        ],
+        [
+          0.9282110229603693,
+          0.07042057615419703
+        ]
+      ],
+      "p(V1)": [
+        0.12857020276920017
+      ]
+    },
+    "estimand": "\\sum_{V1=v} P(V1=v)*[P(Y=1|V1=v,X=1) - P(Y=1|V1=v, X=0)]",
+    "treatment": "X",
+    "outcome": "Y",
+    "model_id": 0
+  }
+}
